@@ -6,7 +6,7 @@
   "scripts": {
     "build": "nwb build-react-app",
     "clean": "nwb clean-app",
-    "start": "nwb serve-react-app",
+    "start": "node server.js",
     "test": "nwb test-react",
     "test:coverage": "nwb test-react --coverage",
     "test:watch": "nwb test-react --server"
@@ -16,9 +16,63 @@
     "react-dom": "^16.2.0"
   },
   "devDependencies": {
-    "nwb": "0.21.x"
+    "babel-eslint": "^8.2.1",
+    "babel-jest": "^22.1.0",
+    "enzyme": "^3.3.0",
+    "eslint": "^4.15.0",
+    "eslint-plugin-react": "^7.5.1",
+    "jest": "^22.1.4",
+    "nwb": "^0.21.2"
   },
   "author": "",
   "license": "MIT",
-  "repository": ""
+  "repository": "",
+  "babel": {
+    "presets": [
+      "react",
+      "stage-1"
+    ],
+    "env": {
+      "development": {
+        "presets": [
+          "env",
+          "react-hmre"
+        ]
+      },
+      "production": {
+        "presets": [
+          [
+            "env",
+            {
+              "es2015": {
+                "modules": false
+              },
+              "targets": {
+                "ie": 9,
+                "uglify": true
+              }
+            }
+          ]
+        ],
+        "plugins": [
+          "transform-react-constant-elements",
+          "transform-react-remove-prop-types"
+        ]
+      },
+      "test": {
+        "presets": [
+          "env"
+        ]
+      }
+    }
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(css|svg|md)$": "<rootDir>/src/configs/empty-module.js"
+    },
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "Container.js"
+    ]
+  }
 }
