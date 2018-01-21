@@ -4,6 +4,8 @@ import path from 'path';
 import express from 'express';
 import bodyParser from 'body-parser';
 
+import Enumerable from 'linq';
+
 import tedtalks from './api/tedtalks';
 import ufo from './api/ufo';
 import museums from './api/museums';
@@ -33,7 +35,7 @@ app.use(function(req, res, next) {
     // Disable caching so we'll always get the latest comments.
     res.setHeader('Cache-Control', 'no-cache')
     next()
-})
+});
 
 app.get('/api/tedtalks', async function(req, res) {
   res.json(await tedtalks());
@@ -43,10 +45,15 @@ app.get('/api/ufos', async function(req, res) {
   res.json(await ufo());
 })
 
+app.get('/api/ufos/:id', async function(req, res) {
+  const ufoData = Enumerable.from(await ufo());
+  res.json(ufoData.singleOrDefault(x => x.id == req.params.id));
+})
+
 app.get('/api/museums', async function(req, res) {
   res.json(await museums());
 })
 
 app.listen(app.get('port'), function() {
   console.log('Server started: http://localhost:' + app.get('port') + '/')
-})
+});

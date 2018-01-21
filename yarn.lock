@@ -5058,6 +5058,10 @@ libqp@1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/libqp/-/libqp-1.1.0.tgz#f5e6e06ad74b794fb5b5b66988bf728ef1dedbe8"
 
+linq@^3.0.9:
+  version "3.0.9"
+  resolved "https://registry.yarnpkg.com/linq/-/linq-3.0.9.tgz#962b4d56b3f4b84ea2abd2774cf171b5adb703ef"
+
 load-json-file@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/load-json-file/-/load-json-file-1.1.0.tgz#956905708d58b4bab4c2261b04f59f31c99374c0"

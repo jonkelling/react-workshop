@@ -1,9 +1,8 @@
 import csvhelper from './csvhelper';
 import path from 'path';
 import cacher from './cacher';
+import withIds from './withIds';
 
 const filename = path.join(__dirname, '..', 'data', 'ufo.csv');
 
-const value = cacher(async () => {return await csvhelper(filename)});
-
-export default value;
+export default cacher(withIds(async () => await csvhelper(filename)));

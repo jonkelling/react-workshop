@@ -1,14 +1,15 @@
 import csvhelper from './csvhelper';
 import path from 'path';
 import cacher from './cacher';
+import withIds from './withIds';
 
 const basePath = path.join(__dirname, '..', 'data', 'ted-talks');
 
-export default cacher(() => {
+export default cacher(async () => {
     const tedmain = csvhelper(path.join(basePath, 'ted_main.csv'));
     const transcripts = csvhelper(path.join(basePath, 'transcripts.csv'));
     return {
-        ted: tedmain,
-        transcripts
+        ted: await (async () => await tedmain)(),
+        transcripts: await (async () => await transcripts)()
     };
 });

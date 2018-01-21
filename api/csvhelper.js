@@ -20,4 +20,4 @@ async function getData(filename) {
     });
 }
 
-export default async filename => {return await getData(filename)};
+export default async filename => await getData(filename);
