@@ -1,8 +1,13 @@
-var fs = require('fs')
-var path = require('path')
+import fs from 'fs';
+import path from 'path';
 
-var express = require('express')
-var bodyParser = require('body-parser')
+import express from 'express';
+import bodyParser from 'body-parser';
+
+import tedtalks from './api/tedtalks';
+import ufo from './api/ufo';
+import museums from './api/museums';
+
 
 var app = express()
 
@@ -20,8 +25,8 @@ catch (e) {
   app.use(require('nwb/express')(express))
 }
 
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({extended: true}))
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 
 // Additional middleware which will set headers that we need on each request.
 app.use(function(req, res, next) {
@@ -30,8 +35,16 @@ app.use(function(req, res, next) {
     next()
 })
 
-app.get('/api/test', function(req, res) {
-  res.json({ a: "b", c: "d" })
+app.get('/api/tedtalks', async function(req, res) {
+  res.json(await tedtalks());
+})
+
+app.get('/api/ufos', async function(req, res) {
+  res.json(await ufo());
+})
+
+app.get('/api/museums', async function(req, res) {
+  res.json(await museums());
 })
 
 app.listen(app.get('port'), function() {

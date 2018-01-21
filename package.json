@@ -6,18 +6,21 @@
   "scripts": {
     "build": "nwb build-react-app",
     "clean": "nwb clean-app",
-    "start": "node server.js",
+    "start": "npx babel-node --harmony server.js",
     "test": "nwb test-react",
     "test:coverage": "nwb test-react --coverage",
     "test:watch": "nwb test-react --server"
   },
   "dependencies": {
+    "csv": "^2.0.0",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react-dom": "^16.2.0",
+    "uuid": "^3.2.1"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
     "babel-jest": "^22.1.0",
+    "babel-preset-react-hmre": "^1.1.1",
     "enzyme": "^3.3.0",
     "eslint": "^4.15.0",
     "eslint-plugin-react": "^7.5.1",
