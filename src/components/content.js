@@ -19,8 +19,8 @@ export default class Content extends React.Component{
 	render() {
 		if (this.props.ufoSightings) {
 		return <div>
-			<table border="1">
 			<UfoSummary ufoSightings={this.props.ufoSightings}/>
+			<table border="1">
 				<thead>
 					<tr>
 					<th>City: </th>
