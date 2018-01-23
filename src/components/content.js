@@ -1,6 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+<<<<<<< Updated upstream
 import Enumerable from 'linq';
+=======
+import UfoSummary from './ufoSummary.js';
+>>>>>>> Stashed changes
 
 export default class Content extends React.Component{
 	constructor(props) {
@@ -18,7 +22,12 @@ export default class Content extends React.Component{
 	render() {
 		if (this.props.ufoSightings) {
 		return <div>
+<<<<<<< Updated upstream
 			<table border="1">
+=======
+			<UfoSummary ufoSightings={this.props.ufoSightings}/>
+			<table>
+>>>>>>> Stashed changes
 				<thead>
 					<tr>
 					<th>City: </th>
