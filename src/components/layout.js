@@ -7,8 +7,8 @@ import Footer from './footer';
 export default class Layout extends React.Component {
 	render() {
 		return <div>
-			<Menu />
 			<Header></Header>
+			<Menu />			
 			<div>Content</div>
 			<Footer />
 		</div>;
