@@ -1,4 +1,5 @@
-import React from 'react';
+import Footer from './footer'
+import React from 'react'
 
 export default class Layout extends React.Component{
 	render() {
@@ -6,7 +7,7 @@ export default class Layout extends React.Component{
 			<div>Header</div>
 			<div>menu</div>
 			<div>Content</div>
-			<div>Footer</div>
+			<Footer />
 		</div>;
 	}
 }
