@@ -1,22 +1,12 @@
 import React from 'react';
-<<<<<<< Updated upstream
-import Header from './header'
-import Footer from './footer'
-
-
-export default class Layout extends React.Component{
-	render() {
-		return <div>
-			<Header />
-			<div>menu fluffy</div>
-=======
 import Menu from './menu.js';
+import Header from './header.js'
+import Footer from './footer.js'
 export default class Layout extends React.Component{
 	render() {
 		return <div>
-			<div>Header</div>
+			<Header/>
 			<Menu/>
->>>>>>> Stashed changes
 			<div>Content</div>
 			<Footer />
 		</div>;
