@@ -20,10 +20,16 @@ export default class Layout extends React.Component {
     }
 
 	render() {
+        const data = [
+            { id: 0, main_speaker: 'Jon Kelling', film_date: '0' },
+            { id: 0, main_speaker: 'Jon Kelling', film_date: '0' },
+            ...this.state.data,
+        ];
+
 		return <div>
 			<Header></Header>
 			<Menu />			
-			<Content tedTalks={this.state.data} />
+			<Content tedTalks={data} />
 			<Footer />
 		</div>;
 	}
