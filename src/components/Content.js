@@ -46,6 +46,8 @@ export default class Content extends React.Component {
                     <tr>
                         <th>Film Date</th>
                         <th>Speaker</th>
+                        <th>Additional Info</th>
+                        <th>Occupation</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -57,6 +59,9 @@ export default class Content extends React.Component {
                                 <td><a href="#" onClick={() => this.props.selectTedTalk(tedTalk.id)}>
                                     {tedTalk.main_speaker}
                                 </a></td>
+                                <td>{ tedTalk.description }
+                                </td>
+                                <td>{tedTalk.speaker_occupation}</td>
                             </tr>
                         ))
                     }
