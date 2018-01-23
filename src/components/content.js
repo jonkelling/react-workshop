@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Enumerable from 'linq';
+import UfoSummary from './ufoSummary.js';
 
 export default class Content extends React.Component{
 	constructor(props) {
@@ -19,6 +20,7 @@ export default class Content extends React.Component{
 		if (this.props.ufoSightings) {
 		return <div>
 			<table border="1">
+			<UfoSummary ufoSightings={this.props.ufoSightings}/>
 				<thead>
 					<tr>
 					<th>City: </th>
