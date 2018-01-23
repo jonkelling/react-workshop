@@ -6,7 +6,7 @@ export default class Footer extends React.Component {
 					const footerStyles = {
 						position: 'absolute',
 						left: '45vw',
-						bottom: '0px',
+						bottom: '6px',
 						fontWeight: 'bold',
 						fontSize: '24px',
 						textAlign: 'center'					
