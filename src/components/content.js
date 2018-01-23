@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Enumerable from 'linq';
 
 export default class Content extends React.Component{
 	constructor(props) {
@@ -17,10 +18,11 @@ export default class Content extends React.Component{
 	render() {
 		if (this.props.ufoSightings) {
 		return <div>
-			<table>
+			<table border="1">
 				<thead>
 					<tr>
 					<th>City: </th>
+					<th>State: </th>
 					<th>Comments: </th>
 					</tr>
 				</thead>
@@ -29,6 +31,7 @@ export default class Content extends React.Component{
 						this.props.ufoSightings.slice(0,100).map((sighting, i) =>( 
 						<tr key={i}>
 							<td>{sighting.city}</td>
+							<td>{sighting.state}</td>
 							<td>{sighting.comments}</td>
 						</tr>))
 					}
