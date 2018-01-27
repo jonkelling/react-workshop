@@ -1,23 +1,20 @@
-import expect from 'expect'
 import React from 'react'
 import {render, unmountComponentAtNode} from 'react-dom'
 
 import App from './App'
+import { shallow } from 'enzyme';
 
 describe('App component', () => {
-  let node
+  let wrapper
 
   beforeEach(() => {
-    node = document.createElement('div')
+    wrapper = shallow(<App />);
   })
 
   afterEach(() => {
-    unmountComponentAtNode(node)
   })
 
   it('displays a welcome message', () => {
-    render(<App/>, node, () => {
-      expect(node.textContent).toContain('Welcome to React')
-    })
+    expect(wrapper.text()).toContain('')
   })
 })
