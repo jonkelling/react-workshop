@@ -12,7 +12,7 @@ class App extends Component {
         <Header/>
       </div>
       <div className="App-content App-flex">
-        <Content/>
+        <Content body='This is not the body prop'/>
       </div>
       <Footer/>
     </div>
