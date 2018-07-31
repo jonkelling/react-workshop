@@ -7,8 +7,12 @@ export default class Ufo extends Component {
         super(props);
 
         this.state = {
+            ufoData: '',
             ufo: '',
+            index: 0,
         }
+
+        this.displayRandomUfo = this.displayRandomUfo.bind(this);
     }
 
     componentDidMount() {
@@ -19,18 +23,25 @@ export default class Ufo extends Component {
           .then(function (response) {
             // handle success
             self.setState({
-                // -1 to offset 0 index
-                ufo: response.data[getRandomInt(response.data.length - 1)],
+                ufo: response.data[self.state.index],
+                ufoData: response.data,
             })
           })
           .catch(function (error) {
             // handle error
             console.log(error);
           });
+    }
 
-          function getRandomInt(max) {
+    displayRandomUfo() {
+        this.setState({
+            // -1 to offset 0 index
+            ufo: this.state.ufoData[getRandomInt(this.state.ufoData.length - 1)],
+        });
+
+        function getRandomInt(max) {
             return Math.floor(Math.random() * Math.floor(max));
-          }
+        }
     }
 
     render() {
@@ -41,9 +52,10 @@ export default class Ufo extends Component {
 
         return (
             <div>
-                <h2>Sighting Location - {this.state.ufo.city.toUpperCase()}, {this.state.ufo.country.toUpperCase()}</h2>
                 {/* Do do dangerouslySetInnerHTML in live projects!!! */}
+                <h2 dangerouslySetInnerHTML={{__html: `Sighting Location - ${this.state.ufo.city.toUpperCase()}, ${this.state.ufo.country.toUpperCase()}`}}/>
                 <p dangerouslySetInnerHTML={{__html: this.state.ufo.comments}}/>
+                <button className='bootstrap-btn' onClick={this.displayRandomUfo}>Get Random UFO</button>
             </div>
         );
     }
