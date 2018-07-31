@@ -12,7 +12,7 @@ class App extends Component {
         <Header text='CENTARE TEAM 2 REACT-ING to UFOS'/>
       </div>
       <div className="App-content App-flex">
-        <Content bodyHeader='This is not the body prop'/>
+        <Content bodyHeader='UFO are cools, read about sightnings below!'/>
       </div>
       <Footer text='© 2018 Centare Team 2'/>
     </div>
