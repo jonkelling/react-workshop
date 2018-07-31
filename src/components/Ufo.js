@@ -13,6 +13,8 @@ export default class Ufo extends Component {
         }
 
         this.displayRandomUfo = this.displayRandomUfo.bind(this);
+        this.displayNextUfo = this.displayNextUfo.bind(this);
+        this.displayPreviousUfo = this.displayPreviousUfo.bind(this);
     }
 
     componentDidMount() {
@@ -44,6 +46,30 @@ export default class Ufo extends Component {
         }
     }
 
+    displayNextUfo() {
+        let newIndex = this.state.index + 1;
+
+        if (newIndex > this.state.ufoData)
+            return null;
+
+        this.setState({
+            index: newIndex,
+            ufo: this.state.ufoData[newIndex],
+        });
+    }
+
+    displayPreviousUfo() {
+        let newIndex = this.state.index - 1;
+
+        if (newIndex <= 0)
+            return null;
+
+        this.setState({
+            index: newIndex,
+            ufo: this.state.ufoData[newIndex],
+        });
+    }
+
     render() {
         if (!this.state.ufo)
             return (
@@ -55,7 +81,11 @@ export default class Ufo extends Component {
                 {/* Do do dangerouslySetInnerHTML in live projects!!! */}
                 <h2 dangerouslySetInnerHTML={{__html: `Sighting Location - ${this.state.ufo.city.toUpperCase()}, ${this.state.ufo.country.toUpperCase()}`}}/>
                 <p dangerouslySetInnerHTML={{__html: this.state.ufo.comments}}/>
-                <button className='bootstrap-btn' onClick={this.displayRandomUfo}>Get Random UFO</button>
+                <div className='App-ufo-nav'>
+                    <button className='bootstrap-btn' onClick={this.displayPreviousUfo}>Previous</button>
+                    <button className='bootstrap-btn' onClick={this.displayRandomUfo}>Get Random UFO</button>
+                    <button className='bootstrap-btn' onClick={this.displayNextUfo}>Next</button>
+                </div>
             </div>
         );
     }

@@ -68,6 +68,11 @@
   color: grey;
 }
 
+.App-ufo-nav {
+  display: flex;
+  justify-content: space-between;
+}
+
 .bootstrap-btn {
   display: inline-block;
   padding: 6px 12px;
