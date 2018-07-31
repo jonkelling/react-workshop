@@ -9,6 +9,11 @@ class App extends Component {
     return <div className="App">
       <Header header="UFOs Fuck Yeah!"/>
       <Content />
+      <div className="App-heading App-flex">
+        <h2>Welcome to <span className="App-react">React</span></h2>
+        <img className="App-logo" src={require('./react.svg')}/>
+      </div>
+      <Footer />
     </div>
   }
 }
