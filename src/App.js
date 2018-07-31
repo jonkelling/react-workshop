@@ -14,7 +14,7 @@ class App extends Component {
       <div className="App-content App-flex">
         <Content/>
       </div>
-      <Footer/>
+      <Footer text="some footer text"/>
     </div>
   }
 }
