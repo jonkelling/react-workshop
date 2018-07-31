@@ -88,8 +88,9 @@ export default class Ufo extends Component {
 
         return (
             <div>
+                <small>Sighting Location {this.state.index + 1} of {this.state.ufoData.length}</small>
                 {/* Do do dangerouslySetInnerHTML in live projects!!! */}
-                <h2 dangerouslySetInnerHTML={{__html: `Sighting Location - ${this.state.ufo.city.toUpperCase()}, ${this.state.ufo.country.toUpperCase()}`}}/>
+                <h2 dangerouslySetInnerHTML={{__html: `${this.state.ufo.city.toUpperCase()}, ${this.state.ufo.country.toUpperCase()}`}}/>
                 <p dangerouslySetInnerHTML={{__html: this.state.ufo.comments}}/>
                 <div className='App-ufo-nav'>
                     <AppButton onClick={this.displayPreviousUfo}>Previous</AppButton>
