@@ -7,7 +7,7 @@ import Content from './components/Content';
 class App extends Component {
   render() {
     return <div className="App">
-      <Header />
+      <Header header="UFOs Fuck Yeah!"/>
       <Content />
     </div>
   }
