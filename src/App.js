@@ -8,9 +8,9 @@ import Footer from './components/Footer';
 class App extends Component {
   render() {
     return <div className="App">
-      <Header header = "UFOs Fuck Yeah!" />
-      <Content content="Coming again to save the motherfuckin day, yeah…" />
-      <Footer footer="They are out there" />
+      <Header text = "UFOs Fuck Yeah!" />
+      <Content text="Coming again to save the motherfuckin day, yeah…" />
+      <Footer text="They are out there" />
     </div>
   }
 }
