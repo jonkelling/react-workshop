@@ -48,3 +48,9 @@
   padding: 1em 2em;
   border-radius: .25rem;
 }
+
+.App-footer {
+  background: #222;
+  padding: .75rem;
+  color: grey;
+}
