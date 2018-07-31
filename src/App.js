@@ -10,7 +10,7 @@ class App extends Component {
     return <div className="App">
       <Header header = "UFOs Fuck Yeah!" />
       <Content content="Coming again to save the motherfuckin day, yeah…" />
-      <Footer />
+      <Footer footer="They are out there" />
     </div>
   }
 }
