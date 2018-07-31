@@ -9,12 +9,12 @@ class App extends Component {
   render() {
     return <div className="App">
       <div className="App-heading App-flex">
-        <Header text="CENT 2 BEST 2" />
+        <Header text='CENTARE TEAM 2 REACT-ING to UFOS'/>
       </div>
       <div className="App-content App-flex">
-        <Content body='This is not the body prop'/>
+        <Content bodyHeader='This is not the body prop'/>
       </div>
-      <Footer text="some footer text"/>
+      <Footer text='© 2018 Centare Team 2'/>
     </div>
   }
 }

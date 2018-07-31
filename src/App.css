@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Kirang+Haerang');
+
 .App {
   height: 100%;
   min-height: 400px;
@@ -20,6 +22,7 @@
   font-size: 6vh;
   box-shadow: 0px 4px 4vh 4px rgba(34,34,34,0.9);
   z-index: 2;
+  font-family: 'Kirang Haerang', cursive;
 }
 
 .App-react {
