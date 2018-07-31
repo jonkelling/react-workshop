@@ -3,7 +3,7 @@ import { Component, React } from 'react';
 class Footer extends Component
 {
     render() {
-        return <footer>They're out there</footer>;
+        return <div>They're out there</div>;
     }
 }
 
