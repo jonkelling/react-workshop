@@ -19,20 +19,23 @@ export default class Content extends Component {
           .then(function (response) {
             // handle success
             self.setState({
-                ufo: response.data[0],
+                ufo: response.data[getRandomInt(response.data.length - 1)],
             })
-            console.log(response.data[0])
           })
           .catch(function (error) {
             // handle error
             console.log(error);
           });
+
+          function getRandomInt(max) {
+            return Math.floor(Math.random() * Math.floor(max));
+          }
     }
 
     renderUfoData() {
         if (!this.state.ufo)
             return (
-                <p>Loading ufo data...</p>
+                <p>Loading random ufo data...</p>
             );
 
         return (
