@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 
-class Footer extends Component
-{
+export default class Footer extends React.Component {
     render() {
-        return <div>They're out there <img src={this.props.imageSource} /></div>;
+        return <div>{this.props.footer}<img src={this.props.imageSource} /></div>;
     }
 }
-
-export default Footer;
