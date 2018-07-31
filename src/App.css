@@ -32,17 +32,19 @@
   max-width: 30vh;
 }
 
-.App-instructions {
-  background-color: #f8f8f8;
-  color: #222;
+.App-content {
+  background-image: url('https://images.unsplash.com/photo-1503745328377-1f4355a2284b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=fd259a5f9abffb6e5f588601ced0af81&auto=format&fit=crop&w=3300&q=80');
+  background-size: cover;
+  background-position: bottom;
+
   font-size: 3vh;
   line-height: 1.5;
   padding: 0 1em;
 }
 
-.App-instructions code {
-  background-color: #222;
-  color: #00d8ff;
-  padding: .2em .3em;
-  border-radius: .2em;
+.App-content-body {
+  background: rgba(0,0,0,.67);
+  color: white;
+  padding: 1em 2em;
+  border-radius: .25rem;
 }
