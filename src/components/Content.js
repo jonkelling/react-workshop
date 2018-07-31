@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import PropTypes from 'prop-types';
 import Ufo from './Ufo';
 
 export default class Content extends Component {
@@ -10,4 +11,8 @@ export default class Content extends Component {
           </div>
       )
   }
+}
+
+Content.propTypes = {
+    bodyHeader: PropTypes.string,
 }

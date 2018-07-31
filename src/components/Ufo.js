@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import AppButton from './AppButton';
 
 const axios = require('axios');
 
@@ -7,6 +8,7 @@ export default class Ufo extends Component {
         super(props);
 
         this.state = {
+            isLoading: true,
             ufoData: '',
             ufo: '',
             index: 0,
@@ -27,18 +29,26 @@ export default class Ufo extends Component {
             self.setState({
                 ufo: response.data[self.state.index],
                 ufoData: response.data,
-            })
+            });
           })
           .catch(function (error) {
             // handle error
             console.log(error);
+          })
+          .finally(() => {
+              self.setState({
+                  isLoading: false,
+              });
           });
     }
 
     displayRandomUfo() {
+        let newIndex = getRandomInt(this.state.ufoData.length - 1);
+
         this.setState({
             // -1 to offset 0 index
-            ufo: this.state.ufoData[getRandomInt(this.state.ufoData.length - 1)],
+            ufo: this.state.ufoData[newIndex],
+            index: newIndex,
         });
 
         function getRandomInt(max) {
@@ -71,7 +81,7 @@ export default class Ufo extends Component {
     }
 
     render() {
-        if (!this.state.ufo)
+        if (this.state.isLoading)
             return (
                 <p>Loading random ufo data...</p>
             );
@@ -82,9 +92,9 @@ export default class Ufo extends Component {
                 <h2 dangerouslySetInnerHTML={{__html: `Sighting Location - ${this.state.ufo.city.toUpperCase()}, ${this.state.ufo.country.toUpperCase()}`}}/>
                 <p dangerouslySetInnerHTML={{__html: this.state.ufo.comments}}/>
                 <div className='App-ufo-nav'>
-                    <button className='bootstrap-btn' onClick={this.displayPreviousUfo}>Previous</button>
-                    <button className='bootstrap-btn' onClick={this.displayRandomUfo}>Get Random UFO</button>
-                    <button className='bootstrap-btn' onClick={this.displayNextUfo}>Next</button>
+                    <AppButton onClick={this.displayPreviousUfo}>Previous</AppButton>
+                    <AppButton onClick={this.displayRandomUfo}>Get Random UFO</AppButton>
+                    <AppButton onClick={this.displayNextUfo}>Next</AppButton>
                 </div>
             </div>
         );
